@@ -1,3 +1,3 @@
-web: gunicorn --chdir app WebApp:server
+web: gunicorn --chdir app appfatigue:server
 
 
