@@ -11,26 +11,12 @@ from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
-import plotly.graph_objs as go
-from plotly.subplots import make_subplots
 
-import re 
-from datetime import datetime, timedelta
 import pickle
 import numpy as np
 
 import warnings
 warnings.filterwarnings('ignore')
-
-
-# In[2]:
-
-
-print('****************************************************')
-print('Current time: Connect to BigQuery : ' + str(datetime.now()))
-
-
-# In[3]:
 
 
 # start the App
@@ -42,14 +28,8 @@ app.title = 'Fatigue Strength Prediction Dashboard'
 server = app.server
 
 
-# In[4]:
-
-
 # load the ml model
 model_deploy = pickle.load(open('../Backend/xgb_model_deploy.pickle', 'rb'))
-
-
-# In[5]:
 
 
 prediction_col1 =  dbc.Col([ 
@@ -283,14 +263,9 @@ def update_output(n_clicks, NT, THT, THt, THQCr, CT, Ct, DT, Dt, QmT, TT, Tt, TC
     return f'The estimated fatigue strength is {p_50:,}. The 50% CI is [{p_25:,}, {p_75:,}].', fig
 
 
-# In[ ]:
-
-
-print('****************************************************')
-print('Current time: Run App : ' + str(datetime.now()))
 # run the app 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False, port=8000)
 
 
 
