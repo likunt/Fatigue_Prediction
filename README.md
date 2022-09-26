@@ -6,5 +6,6 @@
 5. `Fatigue_modeling.py`: The script to train ML algorithms and grid search on XGBoost
 4. `xgb_model_deploy.pickle`: Pickle file to save the best model based on XGBoost
 
-
+## Web Server ##
+https://appfatigue.herokuapp.com/
 
