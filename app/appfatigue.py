@@ -159,7 +159,7 @@ app.layout = html.Div([
     html.H1(children='Fatigue Strength Prediction Dashboard'),
 
     html.Div(children='''Fatigue Strength Prediction is constructed using chemical composition and processing parameters.'''),
-    html.Div(children='Developer: Likun Tan'),
+  #  html.Div(children='Developer: Likun Tan'),
     html.Br(),
     
     dcc.Tab(label='Fatigue Strength Prediction', children = [
