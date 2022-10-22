@@ -17,7 +17,6 @@ datetime = "*"
 numpy = "*"
 feature_engine = "*"
 dash-bootstrap-components = "*"
-scikit-learn = "*"
 xgboost = "*"
 
 [dev-packages]
