@@ -306,13 +306,13 @@ def update_output(n_clicks, class_type, NT, THT, THt, THQCr, CT, Ct, DT, Dt, QmT
     p_75 = round(pos+0.67*scale, 3)
 
     fig = px.histogram(his_df, x = 'Fatigue', histnorm ='percent', nbins = 20, width = 550, height  = 420)
-    fig.add_vline(x=p_25, line_width=3, line_dash="dash", line_color="green", annotation_text=f"25th Percentile: {p_25:,}", annotation_position="top left")
-    fig.add_vline(x=p_75, line_width=3, line_dash="dash", line_color="green", annotation_text=f"75th Percentile: {p_75:,}", annotation_position="top right")
-    fig.add_vline(x=p_50, line_width=3, line_dash="dash", line_color="green", annotation_text=f"50th Percentile (Median): {p_50:,}", annotation_position="top")
+    fig.add_vline(x=p_25, line_width=3, line_dash="dash", line_color="green", annotation_text="25th Percentile: {p_25:,}", annotation_position="top left")
+    fig.add_vline(x=p_75, line_width=3, line_dash="dash", line_color="green", annotation_text="75th Percentile: {p_75:,}", annotation_position="top right")
+    fig.add_vline(x=p_50, line_width=3, line_dash="dash", line_color="green", annotation_text="50th Percentile (Median): {p_50:,}", annotation_position="top")
     fig.add_vrect(x0=p_25, x1=p_75, line_width=3, fillcolor="red", opacity=0.2)
 
 
-    return f'The estimated fatigue strength is {p_50:,}. The 50% CI is [{p_25:,}, {p_75:,}].', fig
+    return 'The estimated fatigue strength is {p_50:,}. The 50% CI is [{p_25:,}, {p_75:,}].', fig
 
 
 # In[ ]:
