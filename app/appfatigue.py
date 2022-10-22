@@ -320,7 +320,7 @@ def update_output(n_clicks, class_type, NT, THT, THt, THQCr, CT, Ct, DT, Dt, QmT
 
 # run the app 
 if __name__ == '__main__':
-    useport = int(os.environ.get('PORT', 33507))
+    useport = int(os.environ.get('PORT', 33506))
     app.run_server(debug=False, port=useport)
 
 
