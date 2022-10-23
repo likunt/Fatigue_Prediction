@@ -1,3 +1,3 @@
-web: gunicorn --chdir app appfatigue:server
+web: gunicorn --chdir app appfatigue_num:server
 
 
