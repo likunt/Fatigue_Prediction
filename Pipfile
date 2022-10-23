@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 gunicorn = "*"
-pandas = "*"
+pandas = "==1.4.4"
 "path.py" = "*"
 pyarrow = "*"
 dash-core-components = "*"
