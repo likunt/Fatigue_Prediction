@@ -36,7 +36,7 @@ server = app.server
 
 
 # load the ml model
-model_deploy = pickle.load(open('../Backend/xgb_model_deploy.pickle', 'rb'))
+model_deploy = pickle.load(open('../Backend/xgb_model_deploy_num.pickle', 'rb'))
 
 
 # In[4]:
