@@ -24,6 +24,7 @@ xgboost = "*"
 
 [requires]
 python_version = "3.9.15"
+scikit-learn = "1.0.2"
 
 
 
