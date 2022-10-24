@@ -27,7 +27,8 @@ warnings.filterwarnings('ignore')
 # external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 app = dash.Dash(__name__,
-                external_stylesheets=external_stylesheets)
+                external_stylesheets=external_stylesheets,
+                meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}])
 app.title = 'Fatigue Strength Prediction Dashboard'
 server = app.server
 
@@ -47,55 +48,55 @@ prediction_col1 =  dbc.Col([
                 dbc.Row([html.H5(children='Heat Treatment Conditions')]),
     #processing parameters
                 dbc.Row([
-                    dbc.Col(html.Label(children='Normalizing Temperature (°C) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='NT', type='text', value = '870'))
+                    dbc.Col([html.Label(children='Normalizing Temperature (°C) :')], width=8),
+                    dbc.Col([dbc.Input(id='NT', type='text', value = '870', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Through Hardening Temperature (°C) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='THT', type='text', value = '855'))
+                    dbc.Col([html.Label(children='Through Hardening Temperature (°C) :')], width=8),
+                    dbc.Col([dbc.Input(id='THT', type='text', value = '855', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Through Hardening Time (minutes) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='THt', type='text', value = '30'))
+                    dbc.Col([html.Label(children='Through Hardening Time (minutes) :')], width=8),
+                    dbc.Col([dbc.Input(id='THt', type='text', value = '30', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Cooling Rate for Through Hardening (°C/hr) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='THQCr', type='text', value = '8'))
+                    dbc.Col([html.Label(children='Cooling Rate for Through Hardening (°C/hr) :')], width=8),
+                    dbc.Col([dbc.Input(id='THQCr', type='text', value = '8', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Carburization Temperature (°C) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='CT', type='text', value = '30'))
+                    dbc.Col([html.Label(children='Carburization Temperature (°C) :')], width=8),
+                    dbc.Col([dbc.Input(id='CT', type='text', value = '30', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Carburization Time (minutes) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Ct', type='text', value = '0'))
+                    dbc.Col([html.Label(children='Carburization Time (minutes) :')], width=8),
+                    dbc.Col([dbc.Input(id='Ct', type='text', value = '0', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Diffusion Temperature (°C) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='DT', type='text', value = '30'))
+                    dbc.Col([html.Label(children='Diffusion Temperature (°C) :')], width=8),
+                    dbc.Col([dbc.Input(id='DT', type='text', value = '30', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Diffusion Time (minutes) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Dt', type='text', value = '0'))
+                    dbc.Col([html.Label(children='Diffusion Time (minutes) :')], width=8),
+                    dbc.Col([dbc.Input(id='Dt', type='text', value = '0', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Quenching Media Temperature for Carburization (°C) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='QmT', type='text', value = '30'))
+                    dbc.Col([html.Label(children='Quenching Media Temperature for Carburization (°C) :')], width=8),
+                    dbc.Col([dbc.Input(id='QmT', type='text', value = '30', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Tempering Temperature (°C) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='TT', type='text', value = '650'))
+                    dbc.Col([html.Label(children='Tempering Temperature (°C) :')], width=8),
+                    dbc.Col([dbc.Input(id='TT', type='text', value = '650', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Tempering Time (minutes) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Tt', type='text', value = '60'))
+                    dbc.Col([html.Label(children='Tempering Time (minutes) :')], width=8),
+                    dbc.Col([dbc.Input(id='Tt', type='text', value = '60', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Cooling Rate for Tempering (°C/hr) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='TCr', type='text', value = '24'))
+                    dbc.Col([html.Label(children='Cooling Rate for Tempering (°C/hr) :')], width=8),
+                    dbc.Col([dbc.Input(id='TCr', type='text', value = '24', size = 'sm')], width=3)
                 ]),
     
-            ], style = {'padding': '0px 0px 0px 150px'}, width=3)
+            ], width=3)
 
 
 # In[5]:
@@ -108,40 +109,40 @@ prediction_col2 =  dbc.Col([
     
      #chemical composition
                 dbc.Row([
-                    dbc.Col(html.Label(children='Carbon (C) (wt %) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='C', type='text', value = '0.42'))
+                    dbc.Col([html.Label(children='Carbon (C) (wt %) :')], width=8),
+                    dbc.Col([dbc.Input(id='C', type='text', value = '0.42', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Silicon (Si) (wt %):'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Si', type='text', value = '0.29'))
+                    dbc.Col([html.Label(children='Silicon (Si) (wt %):')], width=8),
+                    dbc.Col([dbc.Input(id='Si', type='text', value = '0.29', size = 'sm')], width=3)
                 ]),  
                 dbc.Row([
-                    dbc.Col(html.Label(children='Manganese (Mn) (wt %):'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Mn', type='text', value = '0.77'))
+                    dbc.Col([html.Label(children='Manganese (Mn) (wt %):')], width=8),
+                    dbc.Col([dbc.Input(id='Mn', type='text', value = '0.77', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Phosphorus (P) (wt %):'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='P', type='text', value = '0.015'))
+                    dbc.Col([html.Label(children='Phosphorus (P) (wt %):')], width=8),
+                    dbc.Col([dbc.Input(id='P', type='text', value = '0.015', size = 'sm')], width=3)
                 ]), 
                 dbc.Row([
-                    dbc.Col(html.Label(children='Sulphur (S) (wt %) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='S', type='text', value = '0.017'))
+                    dbc.Col([html.Label(children='Sulphur (S) (wt %) :')], width=8),
+                    dbc.Col([dbc.Input(id='S', type='text', value = '0.017', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Nickel (Ni) (wt %) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Ni', type='text', value = '0.12'))
+                    dbc.Col([html.Label(children='Nickel (Ni) (wt %) :')], width=8),
+                    dbc.Col([dbc.Input(id='Ni', type='text', value = '0.12', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Chromium (Cr) (wt %) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Cr', type='text', value = '1.1'))
+                    dbc.Col([html.Label(children='Chromium (Cr) (wt %) :')], width=8),
+                    dbc.Col([dbc.Input(id='Cr', type='text', value = '1.1', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Copper (Cu) (wt %) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Cu', type='text', value = '0.09'))
+                    dbc.Col([html.Label(children='Copper (Cu) (wt %) :')], width=8),
+                    dbc.Col([dbc.Input(id='Cu', type='text', value = '0.09', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Molybdenum (Mo) (wt %) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='Mo', type='text', value = '0.15'))
+                    dbc.Col([html.Label(children='Molybdenum (Mo) (wt %) :')], width=8),
+                    dbc.Col([dbc.Input(id='Mo', type='text', value = '0.15', size = 'sm')], width=3)
                 ]),
     
                 html.Br(),
@@ -149,26 +150,26 @@ prediction_col2 =  dbc.Col([
                
     # reduction ratio
                 dbc.Row([
-                    dbc.Col(html.Label(children='Reduction Ratio (Ingot to Bar) :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='RedRatio', type='text', value = '500'))
+                    dbc.Col([html.Label(children='Reduction Ratio (Ingot to Bar) :')], width=8),
+                    dbc.Col([dbc.Input(id='RedRatio', type='text', value = '500', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Area Proportion of Inclusions Deformed by Plastic Work :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='dA', type='text', value = '0.09'))
+                    dbc.Col([html.Label(children='Area Proportion of Inclusions Deformed by Plastic Work :')], width=8),
+                    dbc.Col([dbc.Input(id='dA', type='text', value = '0.09', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Area Proportion of Inclusions Occurring in Discontinuous Array :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='dB', type='text', value = '0.01'))
+                    dbc.Col([html.Label(children='Area Proportion of Inclusions Occurring in Discontinuous Array :')], width=8),
+                    dbc.Col([dbc.Input(id='dB', type='text', value = '0.01', size = 'sm')], width=3)
                 ]),
                 dbc.Row([
-                    dbc.Col(html.Label(children='Area Proportion of Isolated Inclusions :'), width={"order": "first"}),
-                    dbc.Col(dbc.Input(id='dC', type='text', value = '0.01'))
+                    dbc.Col([html.Label(children='Area Proportion of Isolated Inclusions :')], width=8),
+                    dbc.Col([dbc.Input(id='dC', type='text', value = '0.01', size = 'sm')], width=3)
                 ]),
     
-            ], style = {'padding': '0px 0px 0px 150px'}, width=4)
+            ], width=3)
 
 
-# In[ ]:
+# In[6]:
 
 
 prediction_col3 =  dbc.Col([ 
@@ -177,15 +178,16 @@ prediction_col3 =  dbc.Col([
     
     html.Br(),
    # dbc.Row([dbc.Button('Submit', id='submit-val', n_clicks=0, color="primary", className="d-grid gap-2 col-2 mx-auto")]),
-    dbc.Row([dbc.Button('Submit', id='submit-val', n_clicks=0, color="primary", className="d-grid gap-2 col-2 mx-auto")]),
+    dbc.Row([dbc.Button('Submit', id='submit-val', n_clicks=0, color="primary", 
+                        className="d-grid gap-2 col-2 mx-auto")], align="Center"),
     
     html.Br(),
     dbc.Row([html.Div(id='container-button-basic')], align="Center"),
      
-], style = {'padding': '0px 0px 0px 150px'}, width=4)
+], width=4)
 
 
-# In[ ]:
+# In[7]:
 
 
 app.layout = html.Div([
@@ -217,11 +219,10 @@ app.layout = html.Div([
         prediction_col3,
     ],
     align="start")
-    
 ], style = {'padding': '20px'}) # the end of app.layout
 
 
-# In[ ]:
+# In[8]:
 
 
 # create call back fror prediction
@@ -305,10 +306,10 @@ def update_output(n_clicks, class_type, NT, THT, THt, THQCr, CT, Ct, DT, Dt, QmT
     p_50 = round(pos+0., 3)
     p_75 = round(pos+0.67*scale, 3)
 
-    fig = px.histogram(his_df, x = 'Fatigue', histnorm ='percent', nbins = 20, width = 550, height  = 420)
-    fig.add_vline(x=p_25, line_width=3, line_dash="dash", line_color="green", annotation_text=f"25th Percentile: {p_25:,}", annotation_position="top left")
-    fig.add_vline(x=p_75, line_width=3, line_dash="dash", line_color="green", annotation_text=f"75th Percentile: {p_75:,}", annotation_position="top right")
-    fig.add_vline(x=p_50, line_width=3, line_dash="dash", line_color="green", annotation_text=f"50th Percentile (Median): {p_50:,}", annotation_position="top")
+    fig = px.histogram(his_df, x = 'Fatigue', histnorm ='percent', nbins = 20)
+    fig.add_vline(x=p_25, line_width=3, line_dash="dash", line_color="green", annotation_text=f"Q1: {p_25:,}", annotation_position="top left")
+    fig.add_vline(x=p_75, line_width=3, line_dash="dash", line_color="green", annotation_text=f"Q3: {p_75:,}", annotation_position="top right")
+    fig.add_vline(x=p_50, line_width=3, line_dash="dash", line_color="green", annotation_text=f"Q2: {p_50:,}", annotation_position="top")
     fig.add_vrect(x0=p_25, x1=p_75, line_width=3, fillcolor="red", opacity=0.2)
 
 
@@ -322,5 +323,40 @@ def update_output(n_clicks, class_type, NT, THT, THt, THQCr, CT, Ct, DT, Dt, QmT
 if __name__ == '__main__':
     useport = int(os.environ.get('PORT', 33506))
     app.run_server(debug=False, port=useport)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
 
 
