@@ -16,7 +16,7 @@ plotly = "*"
 datetime = "*"
 numpy = "*"
 feature_engine = "*"
-scikit-learn = "*"
+scikit-learn = "==1.0.2"
 dash-bootstrap-components = "*"
 xgboost = "*"
 
