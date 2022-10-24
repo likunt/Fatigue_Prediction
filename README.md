@@ -7,5 +7,5 @@
 4. `xgb_model_deploy.pickle`: Pickle file to save the best model based on XGBoost
 
 ## Web Server ##
-https://appfatigue.herokuapp.com/
+http://fatigue-prediction.herokuapp.com/
 
