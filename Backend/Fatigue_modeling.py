@@ -7,8 +7,6 @@
 # Success will be measured with r2 score and the objective is to get a r2 score > 0.9
 
 # In[1]:
-
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -79,12 +77,10 @@ data_set.head()
 
 # In[4]:
 
-
 data_set['Class'].value_counts()
 
 
 # In[5]:
-
 
 # split in train and test
 #from sklearn.model_selection import train_test_split
